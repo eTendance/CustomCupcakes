@@ -1,14 +1,23 @@
+#logo
+{
+	float:left;
+	width:45%
+}
+
 #newUser
 {
 	display:block;
-	float:left;
-	width:25%
+	float:right;
+	width:50%
 }
 #returningUser
 {
 	display:block;
 	float:right;
 	width:25%;
+}
+body
+{
 }
 footer
 {

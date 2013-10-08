@@ -1,0 +1,3 @@
+<!--
+Functionality: homepage, login, registration
+-->

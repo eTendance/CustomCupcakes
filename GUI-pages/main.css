@@ -8,19 +8,26 @@
 {
 	display:block;
 	float:right;
-	width:50%
+	margin-right:10em;
+	width:25%;
+	background-color:white;
+	border:solid 1px;
 }
 #returningUser
 {
 	display:block;
 	float:right;
 	width:25%;
+	background-color:white;
+	border:solid 1px;
 }
 body
 {
+	background-color:cyan;
 }
 footer
 {
 	float:right;
 	clear:both;
+	margin-right:1em;
 }

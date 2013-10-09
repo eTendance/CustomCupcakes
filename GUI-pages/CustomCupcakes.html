@@ -14,7 +14,7 @@
 			<p>Fast Delivery!</p>
 		</div>
 		<div id="returningUser">
-			<p>Returning User</p>
+			<h3>Returning User</h3>
 			<table>
 				<form action="" method="get"
 				<tr>
@@ -26,14 +26,15 @@
 					<td><input type="text" name="password" value="" maxlength="30"/></td>
 				</tr>
 				<tr>
-					<td><input type="submit" value="Submit"/></td>
+					<td><input type="submit" value="Log In"/></td>
 				</tr>
+				</form>
 			</table>
 		</div>
 		<div id="newUser">
-			<p>New User</p>
+			<h3>New User</h3>
 			<table>
-				<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+				<form action="<?php echo $_SERVER['../web-src/register.php'] ?>" method="post">
 				<tr>
 					<td>Join Our Mailing List:</td>
 					<td><input type="radio" name="mailList" value="yes">Yes<input type="radio" name="mailList" value="no">No</td>
@@ -89,7 +90,7 @@
 					<td><input type="text" name="zipcode" value="" maxlength="5" /></td>
 				</tr>
 				<tr>
-					<td><input type="submit" value="Submit"/></td>
+					<td><input type="submit" value="Create Account"/></td>
 				</tr>
 				</form>
 			</table>

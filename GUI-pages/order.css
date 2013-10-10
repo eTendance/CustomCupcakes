@@ -1,0 +1,52 @@
+#Favorites
+{
+	border:solid 1px;
+	float:left;
+	width:20%;
+}
+#flavor div span
+{
+	clear:both;
+}
+#flavor
+{
+	border:solid 1px;
+	float:right;
+	margin-right:12em;
+	width:65%;
+}
+#filling
+{
+	border:solid 1px;
+	float:right;
+	margin-right:12em;
+	width:65%;
+}
+#icing
+{
+	border:solid 1px;
+	float:right;
+	width:65%;	
+	margin-right:12em;
+}
+#toppings
+{
+	border:solid 1px;
+	clear: both;
+	width:70%;
+	margin-left:15em;
+}
+#cupcake
+{
+	margin-left:15em;
+	margin-top:1em;
+}
+#cupcake input:nth-child(1)
+{
+	float:left;
+}
+#cupcake input:nth-child(2)
+{
+	float:right;
+	margin-right:15em;
+}

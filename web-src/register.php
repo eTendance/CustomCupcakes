@@ -34,4 +34,20 @@ if (isset($_POST['fname'])) {
         echo "account created";
     }
 }
+
+//got the code for connecting to mysql from: http://www.w3schools.com/php/php_mysql_insert.asp
+$con=mysqli_connect("../database-dumps/cupcakes.sql");
+if(mysqli_connect_errno($con)) {
+	echo "Failed to connec to MySQL: " . mysqli_connect_error();
+}
+
+$numOfCustomers = mysql_query("select count(*) from customers;");
+mysqli_query($con, "INSERT INTO customers(userID, fname, lname, email, password, phone, address, city, state, zip, mailingList)
+values ('$numOfCustomers','$_POST[fName]','$_POST[lName]','$_POST[email]','$_POST[password]','$_POST[telephone]','$_POST[address]','$_POST[city]', '$_POST[zip]', '$_POST[mailList]')";
+
+if(!mysqli_query($con,$sql)) {
+	die('Error: ' .mysqli_error($con));
+}
+
+mysqli_close($con);
 ?>

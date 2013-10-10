@@ -143,7 +143,7 @@ DROP TABLE IF EXISTS `frosting`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `frosting` (
   `frostingID` int(5) NOT NULL,
-  `filling` varchar(20) DEFAULT NULL,
+  `frosting` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`frostingID`),
   CONSTRAINT `frostingID1` FOREIGN KEY (`frostingID`) REFERENCES `cupcakes` (`frostingID`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -158,4 +158,4 @@ CREATE TABLE `frosting` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-10-09 13:42:14
+-- Dump completed on 2013-10-09 21:41:58

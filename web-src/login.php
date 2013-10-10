@@ -16,11 +16,11 @@
 	if(!isset($errors)) {
 		$user = mysql_query('select email
 			from customers
-			where '$_GET['email']';'
+			where email == '$_GET['email']';'
 		or die(mysql_error());
 		$pass = mysql_query('select password
 			from customers
-			where '$_GET['email']';'
+			where email == '$_GET['email']';'
 		or die(mysql_error());
 		if(is_null($user)) {
 			$error[] = 'User does not exist';

@@ -42,7 +42,7 @@ if(mysqli_connect_errno($con)) {
 }
 
 $numOfCustomers = mysql_query("select count(*) from customers;");
-mysqli_query($con, "INSERT INTO customers(userID, fname, lname, email, password, phone, address, city, state, zip, mailingList)
+$sql = "mysqli_query($con, "INSERT INTO customers(userID, fname, lname, email, password, phone, address, city, state, zip, mailingList)
 values ('$numOfCustomers','$_POST[fName]','$_POST[lName]','$_POST[email]','$_POST[password]','$_POST[telephone]','$_POST[address]','$_POST[city]', '$_POST[zip]', '$_POST[mailList]')";
 
 if(!mysqli_query($con,$sql)) {

@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.6.13, for Linux (x86_64)
 --
--- Host: localhost    Database: cupcakes
+-- Host: localhost    Database: cupcake
 -- ------------------------------------------------------
 -- Server version	5.6.13
 
@@ -28,7 +28,7 @@ CREATE TABLE `cupcake_order` (
   `quantity` int(4) DEFAULT NULL,
   PRIMARY KEY (`orderID`),
   KEY `cupcakeID1_idx` (`cupcakeID`),
-  CONSTRAINT `cupcakeID1` FOREIGN KEY (`cupcakeID`) REFERENCES `cupcakes` (`cupcakeID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `cupcakeID1` FOREIGN KEY (`cupcakeID`) REFERENCES `cupcakes` (`cupcakeID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -49,12 +49,12 @@ DROP TABLE IF EXISTS `cupcake_toppings`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cupcake_toppings` (
-  `toppingID` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `cupcakeID` int(11) DEFAULT NULL,
-  `topping` int(5) DEFAULT NULL,
-  PRIMARY KEY (`toppingID`),
+  `toppingID` int(5) DEFAULT NULL,
+  PRIMARY KEY (`id`),
   KEY `cupcakeID_idx` (`cupcakeID`),
-  CONSTRAINT `cupcakeID` FOREIGN KEY (`cupcakeID`) REFERENCES `cupcakes` (`cupcakeID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `cupcakeID` FOREIGN KEY (`cupcakeID`) REFERENCES `cupcakes` (`cupcakeID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -87,11 +87,10 @@ CREATE TABLE `cupcakes` (
   KEY `flavorID_idx` (`flavorID`),
   KEY `fillingID_idx` (`fillingID`),
   KEY `frostingID_idx` (`frostingID`),
-  CONSTRAINT `cupcakeID2` FOREIGN KEY (`cupcakeID`) REFERENCES `cupcake_order` (`cupcakeID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `cupcakeID3` FOREIGN KEY (`cupcakeID`) REFERENCES `cupcake_toppings` (`cupcakeID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fillingID` FOREIGN KEY (`fillingID`) REFERENCES `filling` (`fillingID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `flavorID` FOREIGN KEY (`flavorID`) REFERENCES `flavor` (`flavorID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `frostingID` FOREIGN KEY (`frostingID`) REFERENCES `frosting` (`frostingID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fillingID` FOREIGN KEY (`fillingID`) REFERENCES `filling` (`fillingID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `flavorID` FOREIGN KEY (`flavorID`) REFERENCES `flavor` (`flavorID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `frostingID` FOREIGN KEY (`frostingID`) REFERENCES `frosting` (`frostingID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `userID` FOREIGN KEY (`userID`) REFERENCES `customers` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -146,8 +145,7 @@ DROP TABLE IF EXISTS `filling`;
 CREATE TABLE `filling` (
   `fillingID` int(5) NOT NULL,
   `filling` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`fillingID`),
-  CONSTRAINT `fillingID1` FOREIGN KEY (`fillingID`) REFERENCES `cupcakes` (`fillingID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  PRIMARY KEY (`fillingID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -217,4 +215,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-10-11 11:38:52
+-- Dump completed on 2013-10-11 14:48:54

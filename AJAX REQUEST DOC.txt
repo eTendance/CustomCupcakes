@@ -1,0 +1,15 @@
+-ID-name associations for cupcake flavors, fillings, toppings, etc need to be pulled from the json file menu.json (from raley's docs)
+-Make the order form post to ajax.php using ajax as oppose to the current default method
+-When the form is posted, the cart and favorites need to be refreshed
+
+
+Here are some of the ajax requests that can be made to ajax.php:
+
+ajax.php?action=getfavoritesjson
+Get current user's favorites in json format
+
+
+ajax.php?action=getcartjson
+Get items that are in the current user's cart
+
+

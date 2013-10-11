@@ -30,15 +30,6 @@ function check_auth($reqtype) {
     }
 }
 
-function showdashboard() {
-    if ($_SESSION['userdata']['usertype'] == 'p') {
-        header('Location: professordashboard.php');
-    } else {
-        headr('Location: studentdashboard.php');
-    }
-    exit;
-}
-
 function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $randomString = '';

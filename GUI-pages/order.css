@@ -4,6 +4,28 @@
 	float:left;
 	width:20%;
 }
+#orderList
+{
+	border: solid 1px;
+	width: 30%;
+	float:right;
+}
+#orderList div
+{
+	overflow:scroll;
+}
+#orderList div table
+{
+}
+#orderList div table tr:nth-child(2)
+{
+	float:left;
+	margin-right:5em;
+}
+#orderList div table tr:nth-child(3)
+{
+	float:right;
+}
 #flavor div span
 {
 	clear:both;
@@ -61,4 +83,9 @@
 {
 	float:right;
 	margin-right:15em;
+}
+#addFav
+{
+	clear:both;
+	margin-left:50em;
 }

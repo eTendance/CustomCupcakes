@@ -15,6 +15,10 @@
 	margin-right:12em;
 	width:65%;
 }
+#flavor div
+{
+	overflow:scroll;
+}
 #filling
 {
 	border:solid 1px;
@@ -22,12 +26,20 @@
 	margin-right:12em;
 	width:65%;
 }
+#filling div
+{
+	overflow:scroll;
+}
 #icing
 {
 	border:solid 1px;
 	float:right;
 	width:65%;	
 	margin-right:12em;
+}
+#icing div
+{
+	overflow:scroll;
 }
 #toppings
 {

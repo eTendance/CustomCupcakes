@@ -6,7 +6,7 @@
 		<title>Custom Cupcakes</title>
 	</head>
 	<body>
-		<form>
+		<form action="../web-src/ajax.php" method="post">
 		<div id="orderList">
 			<h3>Your Order</h3>
 			<div>
@@ -15,7 +15,7 @@
 						<td><img src="../artwork/cupcake_icon.png" alt="small cupcake img"</td>
 						<td>Test</td>
 						
-						<td><input type="submit" id="delete1" value="delete"</td>
+						<td><input type="button" id="delete1" value="delete"</td>
 					</tr>
 					<tr>
 					</tr>
@@ -160,15 +160,15 @@
 						<td><input type="checkbox" name="toppings" value="11">Mini Marshemellows</td>
 					</tr>
 				</table>
-			<input type="submit" value="Clear All Toppings"/>
+			<input type="button" value="Clear All Toppings"/>
 			</div>
 		</div>
 		<div id="cupcake">
-			<input type="submit" value="Reset Cupcake" />
-			<input type="submit" value="Update Order" />
+			<input type="button" value="Reset Cupcake" />
+			<input type="button" value="Update Order" />
 		</div>
 		<div id="addFav">
-			<input type="submit" value="Add to Favorites" />
+			<input type="button" value="Add to Favorites" />
 		</div>
 		</form>
 	</body>

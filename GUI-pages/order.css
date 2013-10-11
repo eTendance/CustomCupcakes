@@ -17,12 +17,12 @@
 #orderList div table
 {
 }
-#orderList div table tr:nth-child(1)
+#orderList div table tr:nth-child(2)
 {
 	float:left;
 	margin-right:5em;
 }
-#orderList div table tr:nth-child(2)
+#orderList div table tr:nth-child(3)
 {
 	float:right;
 }
@@ -83,4 +83,9 @@
 {
 	float:right;
 	margin-right:15em;
+}
+#addFav
+{
+	clear:both;
+	margin-left:50em;
 }

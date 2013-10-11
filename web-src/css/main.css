@@ -1,0 +1,31 @@
+#logo
+{
+	float:left;
+	width:35%;
+	margin-right:10%;
+}
+
+#newUser
+{
+	display:block;
+	float:right;
+	margin-right:10em;
+	width:25%;
+	border:solid 1px;
+}
+#returningUser
+{
+	display:block;
+	float:right;
+	width:25%;
+	border:solid 1px;
+}
+body
+{
+}
+footer
+{
+	float:right;
+	clear:both;
+	margin-right:1em;
+}

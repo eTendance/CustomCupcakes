@@ -1,0 +1,91 @@
+#Favorites
+{
+	border:solid 1px;
+	float:left;
+	width:20%;
+}
+#orderList
+{
+	border: solid 1px;
+	width: 30%;
+	float:right;
+}
+#orderList div
+{
+	/*overflow-y:scroll;*/
+}
+#orderList div table
+{
+}
+#orderList div table tr:nth-child(2)
+{
+	float:left;
+	margin-right:5em;
+}
+#orderList div table tr:nth-child(3)
+{
+	float:right;
+}
+#flavor div span
+{
+	clear:both;
+}
+#flavor
+{
+	border:solid 1px;
+	float:right;
+	margin-right:12em;
+	width:65%;
+}
+#flavor div
+{
+	overflow-x:scroll;
+}
+#filling
+{
+	border:solid 1px;
+	float:right;
+	margin-right:12em;
+	width:65%;
+}
+#filling div
+{
+	overflow-x:scroll;
+}
+#icing
+{
+	border:solid 1px;
+	float:right;
+	width:65%;	
+	margin-right:12em;
+}
+#icing div
+{
+	overflow-x:scroll;
+}
+#toppings
+{
+	border:solid 1px;
+	clear: both;
+	width:70%;
+	margin-left:15em;
+}
+#cupcake
+{
+	margin-left:15em;
+	margin-top:1em;
+}
+#cupcake input:nth-child(1)
+{
+	float:left;
+}
+#cupcake input:nth-child(2)
+{
+	float:right;
+	margin-right:15em;
+}
+#addFav
+{
+	clear:both;
+	margin-left:50em;
+}

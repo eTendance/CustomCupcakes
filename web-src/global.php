@@ -12,22 +12,13 @@ mysql_select_db($settings['mysql_database']);
 session_start();
 
 //globally defined functions
-function check_auth($reqtype) {
+function check_auth() {
 
-    if (isset($_SESSION['et_logged_in'])) {
-        if ($_SESSION['userdata']['usertype'] != $reqtype) {
-            if ($_SESSION['userdata']['usertype'] == 'p') {
-                header("Location: professordashboard.php");
-                exit;
-            }
-            if ($_SESSION['userdata']['usertype'] == 's') {
-                header("Location: studentdashboard.php");
-                exit;
-            }
-        }
-    } else {
-        header("Location: login.php");
+    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in']!=true) {
+        header("Location: index.php");
+        exit;
     }
+    
 }
 
 function generateRandomString($length = 10) {
@@ -38,5 +29,7 @@ function generateRandomString($length = 10) {
     }
     return $randomString;
 }
+
+
 
 ?>

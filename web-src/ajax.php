@@ -27,3 +27,15 @@ if(isset(z$_GET['action'])){
 	}
 
 }
+
+$con = mysql_connect($settings["mysql_host"], $settings["mysql_username"], $settings["mysql_password"]);
+        if(!$con){
+                die("Could not connect: " . mysql_error());
+        }
+        mysql_select_db($settings["mysql_database"], $con) 
+                or die("Unable to select database:" . mysql_error());
+
+        $query = "select filling from fillings where id = '";
+        
+        mysql_close($con);
+?>

@@ -51,13 +51,13 @@ DROP TABLE IF EXISTS `cupcake_toppings`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cupcake_toppings` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `cupcakeID` int(11) DEFAULT NULL,
   `toppingID` int(5) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `cupcakeID_idx` (`cupcakeID`),
   CONSTRAINT `cupcakeID` FOREIGN KEY (`cupcakeID`) REFERENCES `cupcakes` (`cupcakeID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,6 +66,7 @@ CREATE TABLE `cupcake_toppings` (
 
 LOCK TABLES `cupcake_toppings` WRITE;
 /*!40000 ALTER TABLE `cupcake_toppings` DISABLE KEYS */;
+INSERT INTO `cupcake_toppings` VALUES (1,8,3);
 /*!40000 ALTER TABLE `cupcake_toppings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,11 +90,8 @@ CREATE TABLE `cupcakes` (
   KEY `flavorID_idx` (`flavorID`),
   KEY `fillingID_idx` (`fillingID`),
   KEY `frostingID_idx` (`frostingID`),
-  CONSTRAINT `fillingID` FOREIGN KEY (`fillingID`) REFERENCES `filling` (`fillingID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `flavorID` FOREIGN KEY (`flavorID`) REFERENCES `flavor` (`flavorID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `frostingID` FOREIGN KEY (`frostingID`) REFERENCES `frosting` (`frostingID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `userID` FOREIGN KEY (`userID`) REFERENCES `customers` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -102,6 +100,7 @@ CREATE TABLE `cupcakes` (
 
 LOCK TABLES `cupcakes` WRITE;
 /*!40000 ALTER TABLE `cupcakes` DISABLE KEYS */;
+INSERT INTO `cupcakes` VALUES (2,1,2,2,8,'true',''),(3,2,3,3,8,'true','test'),(4,1,5,2,8,'true','test2'),(5,2,3,3,8,'true','test5'),(6,1,5,2,8,'true','test2'),(7,2,3,3,8,'true','test5'),(8,2,3,3,8,'true','test5');
 /*!40000 ALTER TABLE `cupcakes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -125,7 +124,7 @@ CREATE TABLE `customers` (
   `zip` varchar(7) DEFAULT NULL,
   `mailingList` enum('true','false') DEFAULT NULL,
   PRIMARY KEY (`userID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -134,76 +133,8 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
+INSERT INTO `customers` VALUES (7,'','','','','','','','AL','',''),(8,'john','smith','cpellizzi@gmail.com','tester','013894719','test','test','AL','23891','true');
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `filling`
---
-
-DROP TABLE IF EXISTS `filling`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `filling` (
-  `fillingID` int(5) NOT NULL,
-  `filling` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`fillingID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `filling`
---
-
-LOCK TABLES `filling` WRITE;
-/*!40000 ALTER TABLE `filling` DISABLE KEYS */;
-/*!40000 ALTER TABLE `filling` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `flavor`
---
-
-DROP TABLE IF EXISTS `flavor`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `flavor` (
-  `flavorID` int(5) NOT NULL,
-  `flavor` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`flavorID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `flavor`
---
-
-LOCK TABLES `flavor` WRITE;
-/*!40000 ALTER TABLE `flavor` DISABLE KEYS */;
-/*!40000 ALTER TABLE `flavor` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `frosting`
---
-
-DROP TABLE IF EXISTS `frosting`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `frosting` (
-  `frostingID` int(5) NOT NULL,
-  `frosting` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`frostingID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `frosting`
---
-
-LOCK TABLES `frosting` WRITE;
-/*!40000 ALTER TABLE `frosting` DISABLE KEYS */;
-/*!40000 ALTER TABLE `frosting` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -215,4 +146,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-10-11  1:27:51
+-- Dump completed on 2013-10-11 18:55:34

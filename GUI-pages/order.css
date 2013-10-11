@@ -12,7 +12,7 @@
 }
 #orderList div
 {
-	overflow:scroll;
+	/*overflow-y:scroll;*/
 }
 #orderList div table
 {
@@ -39,7 +39,7 @@
 }
 #flavor div
 {
-	overflow:scroll;
+	overflow-x:scroll;
 }
 #filling
 {
@@ -50,7 +50,7 @@
 }
 #filling div
 {
-	overflow:scroll;
+	overflow-x:scroll;
 }
 #icing
 {
@@ -61,7 +61,7 @@
 }
 #icing div
 {
-	overflow:scroll;
+	overflow-x:scroll;
 }
 #toppings
 {

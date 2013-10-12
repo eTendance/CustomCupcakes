@@ -13,3 +13,5 @@ ajax.php?action=getcartjson
 Get items that are in the current user's cart
 
 
+ajax.php?action=deletefromfavorites&id=[ID TO DELETE]
+Delete a cupcake from the favorites

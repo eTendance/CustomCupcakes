@@ -117,5 +117,10 @@ if ($_REQUEST['action'] == "addtocart") {
         //empty the cart
         $_SESSION['cart'] = array();
     }
-} 
+} elseif ($_REQUEST['action'] == "deletefromfavorites"){
+    
+    $query = 'DELETE FROM cupcakes WHERE cupcakeID="'.$_REQUEST['id'].'"';
+    $result = mysql_query($query);
+    
+}
 ?>

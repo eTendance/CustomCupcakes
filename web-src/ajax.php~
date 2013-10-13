@@ -118,7 +118,7 @@ if ($_REQUEST['action'] == "addtocart") {
         $_SESSION['cart'] = array();
     }
 } elseif ($_REQUEST['action'] == "deletefromfavorites"){
-
+    echo $_REQUEST['id'];
     $query = 'DELETE FROM cupcakes WHERE cupcakeID="'.$_REQUEST['id'].'"';
     $result = mysql_query($query);
     //header("Location:order.php);

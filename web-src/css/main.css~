@@ -49,12 +49,13 @@ h1
 #logo
 {
     position:relative;  
-    left:20%;
+    width:50%
+    margin-left:auto;
+    margin-right:auto;
     margin-top:15%;
 }
 
 p
 {
     text-align:center;
-    margin-right:18em;
 }

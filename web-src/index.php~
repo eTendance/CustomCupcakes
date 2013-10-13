@@ -163,6 +163,6 @@ if (isset($_POST['firstname']) && $_POST['action'] == "register") {
         </div>
     </body>
     <footer>
-        <div>View analytics <a href="analytics.php">here.</a></div>
+        <div>View cupcake options popularity <a href="analytics.php">here.</a></div>
     </footer>
 </html>

@@ -18,6 +18,10 @@
 {
     float: left;
 }
+#orderList div table tr nth-child(2)
+{
+    margin-right: 3em;
+}
 #flavor div span
 {
 	clear:both;

@@ -182,6 +182,7 @@ if (!isset($_SESSION['cart']))
 						<td><input type="checkbox" name="toppings[]" value="15">Pop Rocks</td>
 					</tr>
 				</table>
+			<input type="button" id="cleartoppings" value="Clear All Toppings"/>
 			</div>
 		</div>
 		<div id="cupcake">
